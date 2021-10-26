@@ -1,69 +1,40 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To-do App
 
-> One paragraph statement about the project.
-> 
->In this project, I  implemented the best HTML and CSS practices.
-
-| Contact page | Homepage|
-| -- | -- |
-| ![](./images/screen1.png) | ![](./images/screen2.png)|
-
-Additional description about the project and its features.
+A simple to do list Application which dynamically renders projects in JavaScript using the Webpack. Projects and tasks can be created and stored in Web browser's local storage.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JavaScript
+- HTML
+- Webpack
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
+![](.demo-todo.jpg)
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To set up a local copy of the project
 
+- git clone https://github.com/ShoiraTa/To-Do-List.git
 
-To get a local copy up and running follow these simple example steps.
+- cd Todo-app
 
-### Prerequisites
+- Run npm install on the terminal to install dependancies
 
-### Setup
+- Run npm start to bundle the files in the src folder & product ouput in dist folder
 
-### Install
+or
 
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
-## Authors
+- Go to the dist folder and open index.html
 
 👤 **Shoira**
 
 - GitHub: [@githubhandle](linkedin.com/in/shoira-tashpulatova-bab4a7122)
 - Twitter: [@twitterhandle](https://twitter.com/Shoira03)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/feed/)
-
-  👤 **Author2**
-
-  - GitHub: [@githubhandle](https://github.com/githubhandle)
-  - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-  - LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
 
 ## Show your support
 
