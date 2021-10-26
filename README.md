@@ -10,7 +10,7 @@ A simple to do list Application which dynamically renders projects in JavaScript
 - HTML
 - Webpack
 
-## Live Demo
+## Demo
 
 ![](demo-todo.jpg)
 
