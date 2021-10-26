@@ -12,7 +12,7 @@ A simple to do list Application which dynamically renders projects in JavaScript
 
 ## Live Demo
 
-![](.demo-todo.jpg)
+![](demo-todo.jpg)
 
 ## Getting Started
 
