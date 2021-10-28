@@ -31,4 +31,4 @@ function tasksArr() {
   idGenerator();
 }
 
-module.exports = { tasksArr, idGenerator };
+export { tasksArr, idGenerator };
