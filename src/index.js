@@ -16,6 +16,7 @@ displayOnLoad();
 inputField.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     addNewTask();
+    domObjects();
     taskStatus();
   }
 });
