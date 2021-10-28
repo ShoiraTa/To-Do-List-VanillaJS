@@ -32,13 +32,13 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  border-bottom: solid 1px #807f7f;
 }
 
 li {
   color: #353434;
-  display: flex;
+  display: inline-flex;
   padding: 15px 10px;
-  border-bottom: solid 1px #807f7f;
 }
 
 .addTask {
@@ -71,4 +71,12 @@ input:focus {
   padding: 20px;
   color: #807f7f;
   cursor: pointer;
+}
+
+.d-flex:not(:first-child) {
+  border-bottom: solid 1px #807f7f;
+}
+
+.checkbox {
+  margin-left: 10px;
 }
