@@ -5,7 +5,6 @@ const outputTasks = () => {
   const checkBox = document.createElement('input');
   const deletedItem = document.createElement('s');
 
-  console.log(taskList);
   taskDiv.className = 'd-flex';
   tasksUl.innerHTML = '';
   checkBox.type = 'checkbox';
@@ -20,10 +19,17 @@ const outputTasks = () => {
       //   tasksUl.removeChild(deletedItem);
       // }
     }
+
+    // li.appendChild(checkBox);
+    // li.setAttribute('contenteditable', 'contenteditable');
+    // li.className = 'list';
+    // tasksUl.appendChild(li);
+    // li.innerHTML = `${task.description} <i class="fas fa-trash-alt"></i>`;
+
     tasksUl.appendChild(deletedItem);
     tasksUl.appendChild(taskDiv);
     tasksUl.appendChild(checkBox);
-    tasksUl.innerHTML += ` <li contenteditable class= "list" > ${task.description} </li>`;
+    tasksUl.innerHTML += ` <li contenteditable class= "list" > ${task.description}  <i class="fas fa-trash-alt"></i> </li>`;
   });
 };
 

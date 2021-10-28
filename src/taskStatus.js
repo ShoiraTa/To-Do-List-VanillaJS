@@ -6,14 +6,12 @@ function updateCompletedInStorage(status, index) {
       if (i === index) {
         item.completed = false;
         localStorage.setItem('tasks', JSON.stringify(taskList));
-        console.log('false', localStorage);
       }
     });
   } else {
     taskList.forEach((item, i) => {
       if (i === index) {
         item.completed = true;
-        console.log('correct', localStorage, index);
         localStorage.setItem('tasks', JSON.stringify(taskList));
       }
     });
