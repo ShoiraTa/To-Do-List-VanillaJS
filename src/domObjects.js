@@ -12,24 +12,14 @@ const outputTasks = () => {
   taskList.forEach((task) => {
     if (task.completed) {
       checkBox.setAttribute('checked', 'checked');
-      // tasksUl.appendChild(deletedItem);
     } else {
       checkBox.removeAttribute('checked', 'checked');
-      // if (tasksUl.hasChildNodes(deletedItem)) {
-      //   tasksUl.removeChild(deletedItem);
-      // }
     }
-
-    // li.appendChild(checkBox);
-    // li.setAttribute('contenteditable', 'contenteditable');
-    // li.className = 'list';
-    // tasksUl.appendChild(li);
-    // li.innerHTML = `${task.description} <i class="fas fa-trash-alt"></i>`;
 
     tasksUl.appendChild(deletedItem);
     tasksUl.appendChild(taskDiv);
     tasksUl.appendChild(checkBox);
-    tasksUl.innerHTML += ` <li contenteditable class= "list" > ${task.description}  <i class="fas fa-trash-alt"></i> </li>`;
+    tasksUl.innerHTML += ` <li contenteditable class= "list" > <p class = "par"> ${task.description}  </p><i class="fas fa-trash-alt"></i> </li>`;
   });
 };
 

@@ -4,8 +4,8 @@ import taskStatus from './taskStatus.js';
 import addNewTask from './addNewTask.js';
 import updateContent from './updateContent.js';
 import removeTask from './removeTask.js';
+import clearCompleted from './clearCompleted.js';
 
-const clear = document.getElementById('clear');
 const inputField = document.getElementById('addTask');
 const addTaskbtn = document.getElementById('addTaskbtn');
 removeTask();
@@ -34,11 +34,19 @@ inputField.addEventListener('keypress', (e) => {
   }
 });
 
-clear.addEventListener('click', () => {
-  localStorage.clear();
-  domObjects();
-});
+const idGenerator = () => {
+  const taskList = JSON.parse(localStorage.getItem('tasks'));
+  taskList.forEach((item, i) => {
+    i += 1;
+    item.index = i;
+    localStorage.setItem('tasks', JSON.stringify(taskList));
+    console.log('here', localStorage);
+  });
+};
+
+idGenerator();
 
 removeTask();
 taskStatus(0);
 updateContent();
+clearCompleted();

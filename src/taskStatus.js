@@ -1,4 +1,6 @@
 const checkbox = document.getElementsByClassName('checkbox');
+const par = document.getElementsByTagName('p');
+
 function updateCompletedInStorage(status, index) {
   const taskList = JSON.parse(localStorage.getItem('tasks'));
   if (!status) {
@@ -7,12 +9,18 @@ function updateCompletedInStorage(status, index) {
         item.completed = false;
         localStorage.setItem('tasks', JSON.stringify(taskList));
       }
+      for (let i = 0; i < par.length; i += 1) {
+        par[index].classList.remove('line-through');
+      }
     });
   } else {
     taskList.forEach((item, i) => {
       if (i === index) {
         item.completed = true;
         localStorage.setItem('tasks', JSON.stringify(taskList));
+      }
+      for (let i = 0; i < par.length; i += 1) {
+        par[index].className = 'line-through';
       }
     });
   }
