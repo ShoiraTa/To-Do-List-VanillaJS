@@ -1,5 +1,3 @@
-import domObjects from './domObjects.js';
-
 const checkbox = document.getElementsByClassName('checkbox');
 function updateCompletedInStorage(status, index) {
   const taskList = JSON.parse(localStorage.getItem('tasks'));

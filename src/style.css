@@ -73,10 +73,10 @@ input:focus {
   cursor: pointer;
 }
 
-.d-flex:not(:first-child){
+.d-flex:not(:first-child) {
   border-bottom: solid 1px #807f7f;
 }
 
-.checkbox{
-margin-left: 10px;
+.checkbox {
+  margin-left: 10px;
 }
