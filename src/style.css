@@ -48,7 +48,7 @@ li {
   font-style: italic;
   color: #353434;
   padding: 15px 10px;
-  width: 80%
+  width: 80%;
 }
 
 textarea:focus,
@@ -75,7 +75,6 @@ input:focus {
   cursor: pointer;
 }
 
-
 .d-flex:not(:first-child) {
   border-bottom: solid 1px #807f7f;
 }
@@ -85,22 +84,22 @@ input:focus {
   cursor: pointer;
 }
 
-i{
+i {
   cursor: pointer;
   color: gray;
 }
 
-.inputDiv{
+.inputDiv {
   display: flex;
   justify-content: space-between;
-    align-items: center;
-    margin-right: 25px;
+  align-items: center;
+  margin-right: 25px;
 }
 
-li:focus{
+li:focus {
   outline: none;
 }
 
-.line-through{
+.line-through {
   text-decoration: line-through;
 }

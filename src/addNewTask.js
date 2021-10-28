@@ -1,16 +1,13 @@
 let tasks = [];
 
-const idGenerator = () => {
+function idGenerator() {
   const taskList = JSON.parse(localStorage.getItem('tasks'));
   taskList.forEach((item, i) => {
     i += 1;
     item.index = i;
     localStorage.setItem('tasks', JSON.stringify(taskList));
-    console.log('here', localStorage);
   });
-};
-
-idGenerator();
+}
 
 const inputField = document.getElementById('addTask');
 const addToList = (newTask) => {
@@ -23,7 +20,7 @@ const addToList = (newTask) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-const tasksArr = () => {
+function tasksArr() {
   const inputFieldValue = inputField.value;
   const newTask = {
     description: inputFieldValue,
@@ -32,6 +29,6 @@ const tasksArr = () => {
   };
   addToList(newTask);
   idGenerator();
-};
+}
 
-export default tasksArr;
+module.exports = { tasksArr, idGenerator };
