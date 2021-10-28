@@ -10,7 +10,7 @@ const outputTasks = () => {
   tasksUl.innerHTML = '';
   checkBox.type = 'checkbox';
   checkBox.className = 'checkbox';
-  taskList.forEach((task, index) => {
+  taskList.forEach((task) => {
     if (task.completed) {
       checkBox.setAttribute('checked', 'checked');
       // tasksUl.appendChild(deletedItem);
@@ -23,7 +23,7 @@ const outputTasks = () => {
     tasksUl.appendChild(deletedItem);
     tasksUl.appendChild(taskDiv);
     tasksUl.appendChild(checkBox);
-    tasksUl.innerHTML += ` <li id = ''${index}``> ${task.description} </li>`;
+    tasksUl.innerHTML += ` <li> ${task.description} </li>`;
   });
 };
 
