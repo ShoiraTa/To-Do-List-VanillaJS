@@ -36,6 +36,7 @@ inputField.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     tasksArr();
     domObjects();
+    taskStatus();
   }
 });
 
