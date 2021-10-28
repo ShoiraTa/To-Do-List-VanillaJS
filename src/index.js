@@ -2,6 +2,7 @@ import './style.css';
 import domObjects from './domObjects.js';
 import taskStatus from './taskStatus.js';
 import addNewTask from './addNewTask.js';
+import updateContent from './updateContent';
 
 const clear = document.getElementById('clear');
 const inputField = document.getElementById('addTask');
@@ -20,9 +21,12 @@ inputField.addEventListener('keypress', (e) => {
     taskStatus();
   }
 });
+/// ///////////////////////////////////////////////////
 
+/// /////////////////////////////////////////////////////////
 clear.addEventListener('click', () => {
   localStorage.clear();
   domObjects();
 });
 taskStatus(0);
+updateContent();

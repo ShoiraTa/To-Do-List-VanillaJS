@@ -23,7 +23,6 @@ function updateCompletedInStorage(status, index) {
 const status = () => {
   for (let i = 0; i < checkbox.length; i += 1) {
     checkbox[i].addEventListener('change', () => {
-      console.log('clicked');
       const { checked } = checkbox[i];
       if (checked) {
         updateCompletedInStorage(true, i);

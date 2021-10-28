@@ -23,7 +23,7 @@ const outputTasks = () => {
     tasksUl.appendChild(deletedItem);
     tasksUl.appendChild(taskDiv);
     tasksUl.appendChild(checkBox);
-    tasksUl.innerHTML += ` <li> ${task.description} </li>`;
+    tasksUl.innerHTML += ` <li contenteditable class= "list" > ${task.description} </li>`;
   });
 };
 
