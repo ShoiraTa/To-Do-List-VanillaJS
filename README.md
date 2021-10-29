@@ -2,7 +2,7 @@
 
 # To-do App
 
-A simple to do list Application which dynamically renders a tasks in JavaScript using the Webpack. Projects and tasks can be created and stored in Web browser's local storage.
+A simple to do list Application which dynamically renders tasks in JavaScript using the Webpack. Projects and tasks can be created and stored in Web browser's local storage.
 
 ## Built With
 
