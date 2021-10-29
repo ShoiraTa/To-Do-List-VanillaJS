@@ -1,4 +1,6 @@
 const checkbox = document.getElementsByClassName('checkbox');
+const par = document.getElementsByTagName('p');
+
 function updateCompletedInStorage(status, index) {
   const taskList = JSON.parse(localStorage.getItem('tasks'));
   if (!status) {
@@ -6,15 +8,19 @@ function updateCompletedInStorage(status, index) {
       if (i === index) {
         item.completed = false;
         localStorage.setItem('tasks', JSON.stringify(taskList));
-        console.log('false', localStorage);
+      }
+      for (let i = 0; i < par.length; i += 1) {
+        par[index].classList.remove('line-through');
       }
     });
   } else {
     taskList.forEach((item, i) => {
       if (i === index) {
         item.completed = true;
-        console.log('correct', localStorage, index);
         localStorage.setItem('tasks', JSON.stringify(taskList));
+      }
+      for (let i = 0; i < par.length; i += 1) {
+        par[index].className = 'line-through';
       }
     });
   }
@@ -23,7 +29,6 @@ function updateCompletedInStorage(status, index) {
 const status = () => {
   for (let i = 0; i < checkbox.length; i += 1) {
     checkbox[i].addEventListener('change', () => {
-      console.log('clicked');
       const { checked } = checkbox[i];
       if (checked) {
         updateCompletedInStorage(true, i);

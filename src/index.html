@@ -5,14 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wbpack</title>
+    <script src="https://kit.fontawesome.com/9875f697fa.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
       <h4>Today's To Do</h4>
       <div class="main">
-        <input type="text" placeholder="Add to your list" id="addTask" class="addTask" />
+        <div class="inputDiv">
+          <input type="text" placeholder="Add to your list" id="addTask" class="addTask" />
+          <i class="far fa-plus-square" id="addTaskbtn"></i>
+        </div>
+
+
         <div class="tasksList">
-          <ul id="tasks"></ul>
+          <ul id="tasks">
+          </ul>
+         
         </div>
         <div class="footer">
           <button class="clear" id="clear">Clear all completed</button>

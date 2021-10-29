@@ -1,11 +1,16 @@
 import './style.css';
 import domObjects from './domObjects.js';
 import taskStatus from './taskStatus.js';
+import updateContent from './updateContent.js';
+import removeTask from './removeTask.js';
+import clearCompleted from './clearCompleted.js';
 
-let tasks = [];
-const clear = document.getElementById('clear');
+const addNewTask = require('./addNewTask.js');
+
 const inputField = document.getElementById('addTask');
+const addTaskbtn = document.getElementById('addTaskbtn');
 
+removeTask();
 const displayOnLoad = () => {
   if (localStorage.getItem('tasks') != null) {
     domObjects();
@@ -13,35 +18,21 @@ const displayOnLoad = () => {
 };
 displayOnLoad();
 
-const addToList = (newTask) => {
-  if (localStorage.getItem('tasks') === null) {
-    tasks = [];
-  } else {
-    tasks = JSON.parse(localStorage.getItem('tasks'));
-  }
-  tasks.push(newTask);
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-};
-
-const tasksArr = () => {
-  const inputFieldValue = inputField.value;
-  const newTask = {
-    description: inputFieldValue,
-    completed: false,
-  };
-  addToList(newTask);
-};
-
-inputField.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    tasksArr();
-    domObjects();
-    taskStatus();
-  }
-});
-
-clear.addEventListener('click', () => {
-  localStorage.clear();
+const execute = () => {
+  addNewTask.tasksArr();
   domObjects();
+  taskStatus();
+  updateContent();
+  removeTask();
+  inputField.value = '';
+};
+
+addTaskbtn.addEventListener('click', () => {
+  execute();
 });
+
+addNewTask.idGenerator();
+removeTask();
 taskStatus(0);
+updateContent();
+clearCompleted();
