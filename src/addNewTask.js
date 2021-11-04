@@ -1,3 +1,5 @@
+import localStorageC from './__mocks__/localStorage';
+
 let tasks = [];
 
 function idGenerator() {
@@ -10,18 +12,23 @@ function idGenerator() {
 }
 
 const inputField = document.getElementById('addTask');
-const addToList = (newTask) => {
+function addToList(newTask) {
   if (localStorage.getItem('tasks') === null) {
     tasks = [];
   } else {
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
+  const toDoTasks = localStorageC.getDataFromLocalStorage('toDoTasks');
   tasks.push(newTask);
+  toDoTasks.push(newTask);
+  localStorageC.createTheLocalStorage('toDoTasks', toDoTasks);
   localStorage.setItem('tasks', JSON.stringify(tasks));
-};
+  return toDoTasks;
+}
 
 function tasksArr() {
   const inputFieldValue = inputField.value;
+
   const newTask = {
     description: inputFieldValue,
     completed: false,
@@ -31,4 +38,4 @@ function tasksArr() {
   idGenerator();
 }
 
-export { tasksArr, idGenerator };
+export { tasksArr, addToList, idGenerator };

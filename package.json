@@ -4,10 +4,16 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "watch": "webpack --watch",
     "build": "webpack",
     "start": "webpack serve --open"
+  },
+  "jest": {
+    "resetMocks": false,
+    "setupFiles": ["jest-localstorage-mock"],
+    "testEnvironment": "jsdom"
   },
   "repository": {
     "type": "git",
@@ -28,6 +34,8 @@
     "eslint-plugin-import": "^2.25.2",
     "hint": "^6.1.6",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.3.1",
+    "jest-localstorage-mock": "^2.4.18",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
