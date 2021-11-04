@@ -2,7 +2,7 @@ import './style.css';
 import domObjects from './domObjects.js';
 import taskStatus from './taskStatus.js';
 import updateContent from './updateContent.js';
-import removeTask from './removeTask.js';
+import { deleteItem } from './removeTask.js';
 import clearCompleted from './clearCompleted.js';
 
 const addNewTask = require('./addNewTask.js');
@@ -10,7 +10,7 @@ const addNewTask = require('./addNewTask.js');
 const inputField = document.getElementById('addTask');
 const addTaskbtn = document.getElementById('addTaskbtn');
 
-removeTask();
+deleteItem();
 const displayOnLoad = () => {
   if (localStorage.getItem('tasks') != null) {
     domObjects();
@@ -23,7 +23,7 @@ const execute = () => {
   domObjects();
   taskStatus();
   updateContent();
-  removeTask();
+  deleteItem();
   inputField.value = '';
 };
 
@@ -32,7 +32,7 @@ addTaskbtn.addEventListener('click', () => {
 });
 
 addNewTask.idGenerator();
-removeTask();
+deleteItem();
 taskStatus(0);
 updateContent();
 clearCompleted();

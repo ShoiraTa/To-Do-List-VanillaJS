@@ -5,19 +5,18 @@ import localStorageController from './__mocks__/localStorage.js';
 jest.mock('./localStorage-controller.js');
 
 describe('to do list add and delete', () => {
-  const newTask1 = {
-    description: 'task3',
-    completed: false,
-    index: 0,
-  };
-  const newtask = localStorageController.getDataFromLocalStorage('data');
-  test('add a new task', () => {
-    addToList(newTask1);
-    expect(newtask).toHaveLength(3);
+  test('delete a task', () => {
+    expect(removefromlist(0)).toHaveLength(1);
   });
 
-  test('delete task', () => {
-    removefromlist(1);
-    expect(newtask).toHaveLength(2);
+  test('add a new task', () => {
+    const newtask = localStorageController.getDataFromLocalStorage('data');
+    const newTask1 = {
+      description: 'task 3',
+      completed: false,
+      index: 0,
+    };
+    addToList(newTask1);
+    expect(newtask).toHaveLength(3);
   });
 });

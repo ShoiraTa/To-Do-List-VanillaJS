@@ -1,14 +1,20 @@
 import taskStatus from './taskStatus.js';
-import domObjects from './domObjects.js';
+import localStorageC from './__mocks__/localStorage';
 
 const deletebtn = document.getElementsByClassName('fa-trash-alt');
-function removefromlist(index) {
-  const taskList = JSON.parse(localStorage.getItem('tasks'));
-  taskList.splice(index, 1);
 
-  localStorage.setItem('tasks', JSON.stringify(taskList));
-  domObjects();
+function removefromlist(index) {
+  if (localStorage.getItem('tasks') != null) {
+    const taskList = JSON.parse(localStorage.getItem('tasks'));
+    taskList.splice(index, 1);
+    localStorage.setItem('tasks', JSON.stringify(taskList));
+  }
   taskStatus();
+
+  let toDoTasks = localStorageC.getDataFromLocalStorage('toDoTasks');
+  toDoTasks = toDoTasks.filter((task) => task.index !== toDoTasks[index].index);
+  console.log(toDoTasks);
+  return toDoTasks;
 }
 
 const deleteItem = () => {
