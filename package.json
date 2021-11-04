@@ -12,7 +12,9 @@
   },
   "jest": {
     "resetMocks": false,
-    "setupFiles": ["jest-localstorage-mock"],
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ],
     "testEnvironment": "jsdom"
   },
   "repository": {
@@ -27,6 +29,7 @@
   },
   "homepage": "https://github.com/ShoiraTa/webpack#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.4.0",
     "eslint": "^7.32.0",

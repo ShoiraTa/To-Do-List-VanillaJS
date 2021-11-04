@@ -1,6 +1,5 @@
 import taskStatus from './taskStatus.js';
 import domObjects from './domObjects.js';
-import localStorageC from './__mocks__/localStorage';
 
 const deletebtn = document.getElementsByClassName('fa-trash-alt');
 function removefromlist(index) {
@@ -20,4 +19,4 @@ const deleteItem = () => {
     });
   }
 };
-export default deleteItem;
+export { deleteItem, removefromlist };
