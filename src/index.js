@@ -1,38 +1,22 @@
 import './style.css';
-import domObjects from './domObjects.js';
-import taskStatus from './taskStatus.js';
-import updateContent from './updateContent.js';
-import removeTask from './removeTask.js';
-import clearCompleted from './clearCompleted.js';
+import List from './list.js';
 
-const addNewTask = require('./addNewTask.js');
+const tasks = new List();
+// tasks.addActivity('Come Home');
 
-const inputField = document.getElementById('addTask');
-const addTaskbtn = document.getElementById('addTaskbtn');
-
-removeTask();
-const displayOnLoad = () => {
-  if (localStorage.getItem('tasks') != null) {
-    domObjects();
-  }
-};
-displayOnLoad();
-
-const execute = () => {
-  addNewTask.tasksArr();
-  domObjects();
-  taskStatus();
-  updateContent();
-  removeTask();
-  inputField.value = '';
-};
-
-addTaskbtn.addEventListener('click', () => {
-  execute();
+document.querySelector('#add-task').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const activity = e.target.elements.activity.value;
+  tasks.addActivity(activity);
+  e.target.reset();
 });
 
-addNewTask.idGenerator();
-removeTask();
-taskStatus(0);
-updateContent();
-clearCompleted();
+// tasks.display();
+document.querySelector('#delete-all').addEventListener('click', () => {
+  tasks.deleteAll();
+});
+
+// clear completed
+document.querySelector('.clear-completed').addEventListener('click', () => {
+  tasks.clearCompleted();
+});
