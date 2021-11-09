@@ -54,14 +54,16 @@ export default class List {
   }
 
   addActivity(activity) {
-    const newActivity = {
-      description: activity,
-      completed: false,
-      index: this.list.length,
-    };
-    this.list.push(newActivity);
-    this.display();
-    this.saveData();
+    if (activity.length > 0) {
+      const newActivity = {
+        description: activity,
+        completed: false,
+        index: this.list.length,
+      };
+      this.list.push(newActivity);
+      this.display();
+      this.saveData();
+    }
   }
 
   deleteAll() {
