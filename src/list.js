@@ -2,7 +2,6 @@ export default class List {
   constructor() {
     this.list = JSON.parse(localStorage.getItem('todo-list'));
     if (!this.list) {
-      console.log(this);
       this.list = [];
     }
     this.display();
@@ -43,6 +42,14 @@ export default class List {
   }
 
   saveData() {
+    for (let i = 0; i < this.list.length; i += 1) {
+      this.list[i].index = i;
+    }
+    this.list.sort((a, b) => {
+      if (a.index < b.index) { return -1; }
+      if (a.index > b.index) { return 1; }
+      return 0;
+    });
     localStorage.setItem('todo-list', JSON.stringify(this.list));
   }
 
@@ -54,7 +61,7 @@ export default class List {
     };
     this.list.push(newActivity);
     this.display();
-    this.saveActivity();
+    this.saveData();
   }
 
   deleteAll() {
@@ -73,10 +80,18 @@ export default class List {
   }
 
   deleteCompleted(index) {
-    console.log(this.list);
     this.list.splice(index, 1);
-    console.log(this.list);
     this.display();
+  }
+
+  clearCompleted() {
+    this.list = this.list.filter((activity) => activity.completed === false);
+    this.display();
+  }
+
+  editActivity(index, description) {
+    this.list[index].description = description;
+    this.saveData();
   }
 
   activityActions() {
@@ -89,12 +104,24 @@ export default class List {
         });
       });
     }
-
+    // delete one activity on click
     const deleteActivity = document.querySelectorAll('.delete-activity');
     deleteActivity.forEach((activity) => {
       activity.addEventListener('click', () => {
         this.deleteCompleted(activity.getAttribute('data'));
       });
     });
+
+    // edit activity
+    const editedActivity = document.querySelectorAll('.activity');
+    if (editedActivity) {
+      editedActivity.forEach((activity) => {
+        activity.addEventListener('input', (e) => {
+          const description = e.target.innerText;
+          const index = e.target.getAttribute('data');
+          this.editActivity(index, description);
+        });
+      });
+    }
   }
 }

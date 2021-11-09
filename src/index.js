@@ -14,3 +14,8 @@ document.querySelector('#add-task').addEventListener('submit', (e) => {
 document.querySelector('#delete-all').addEventListener('click', () => {
   tasks.deleteAll();
 });
+
+// clear completed
+document.querySelector('.clear-completed').addEventListener('click', () => {
+  tasks.clearCompleted();
+});
