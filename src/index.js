@@ -10,6 +10,7 @@ document.querySelector('#add-task').addEventListener('submit', (e) => {
   tasks.addActivity(activity);
   e.target.reset();
 });
+
 // tasks.display();
 document.querySelector('#delete-all').addEventListener('click', () => {
   tasks.deleteAll();
