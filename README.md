@@ -12,6 +12,7 @@ A simple to do list Application which dynamically renders tasks in JavaScript us
 
 ## Demo
 
+[live page](https://shoirata.github.io/To-Do-List/)
 ![](demo.png)
 
 ## Getting Started
@@ -39,7 +40,6 @@ or
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
 
 ## 📝 License
 
